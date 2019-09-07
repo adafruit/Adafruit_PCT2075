@@ -170,19 +170,28 @@ float Adafruit_PCT2075::getHighTemperatureThreshold(void){
     @param  new_temp_threshold
             The new high temperature threshold in degrees C. Resolution is 0.5 C
 */
-
 void Adafruit_PCT2075::setHighTemperatureThreshold(float new_temp_threshold){
   Adafruit_BusIO_Register high_temp_register =
       Adafruit_BusIO_Register(i2c_dev, PCT2075_REGISTER_TOS, 2, MSBFIRST);
   int16_t new_raw_temp = ((uint16_t)(new_temp_threshold * 2) <<7);
   high_temp_register.write(new_raw_temp);
 }
-
+/**************************************************************************/
+/*!
+    @brief Gets the high temperature alert mode
+    @return The high temperature alert mode
+*/
 pct2075_mode_t Adafruit_PCT2075::getMode(void){
     Adafruit_BusIO_RegisterBits mode_bit =
       Adafruit_BusIO_RegisterBits(CONFIG, 1, 1);
     return (pct2075_mode_t)mode_bit.read();
 }
+/*************************************************************************/
+/*!
+    @brief  Sets the high temperature alert mode
+    @param  mode
+            The mode to set. Must be a pct2075_mode_t
+*/
 void Adafruit_PCT2075::setMode(pct2075_mode_t mode){
     Adafruit_BusIO_RegisterBits mode_bit =
       Adafruit_BusIO_RegisterBits(CONFIG, 1, 1);

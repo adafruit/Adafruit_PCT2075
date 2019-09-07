@@ -37,21 +37,24 @@
  */
 
 typedef enum {
-  PCT2075_MODE_COMPARITOR,
-  PCT2075_MODE_INTERRUPT
+  PCT2075_MODE_COMPARITOR,  ///< In comparitor mode, the sensor acts like a thermostat and
+                            ///< will activate the INT pin. when an alert is triggered. The
+                            ///< INT pin will be deactiveated when the temperature falls below
+                            ///< `temperature_hysteresis`.
+  PCT2075_MODE_INTERRUPT    ///<  In interrupt mode the INT pin is activated once when a temperature
+                            ///<  fault is detected, and once more when the temperature falls below
+                            ///< `temperature_hysteresis`. The alert is cleared by reading a value
 } pct2075_mode_t;
-
-/**
- * @brief Fault Count options
+/** @brief Faut count options
  *
  * Allowed values for `setFaultCount`.
  */
 
 typedef enum {
-  PCT2075_FAULT_COUNT_1,
-  PCT2075_FAULT_COUNT_2,
-  PCT2075_FAULT_COUNT_4,
-  PCT2075_FAULT_COUNT_6,
+  PCT2075_FAULT_COUNT_1,    ///< Raise an alert after 1 fault
+  PCT2075_FAULT_COUNT_2,    ///< Raise an alert after 2 faults
+  PCT2075_FAULT_COUNT_4,    ///< Raise an alert after 4 faults
+  PCT2075_FAULT_COUNT_6,    ///< Raise an alert after 6 faults
 } pct2075_fault_count_t;
 
 /*!
@@ -76,7 +79,7 @@ public:
 
   pct2075_mode_t getMode(void);
   void setMode(pct2075_mode_t mode);
-  
+
   Adafruit_BusIO_Register *CONFIG;  ///< BusIO Register for CONFIG
 
 private:
