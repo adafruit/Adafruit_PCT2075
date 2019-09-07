@@ -91,13 +91,16 @@ float Adafruit_PCT2075::getTemperature(void){
     @brief Gets the amount of time the sensor waits between measurements
     @return The amount of idle time in seconds
 */
-uint8_t Adafruit_PCT2075::getIdleTime(void){
+float Adafruit_PCT2075::getIdleTime(void){
   Adafruit_BusIO_Register idle_time_reg =
   Adafruit_BusIO_Register(i2c_dev, PCT2075_REGISTER_TIDLE, 1, MSBFIRST);
 
   Adafruit_BusIO_RegisterBits idle_time =
   Adafruit_BusIO_RegisterBits(&idle_time_reg, 5, 0);
-  return (uint8_t)idle_time.read();
+  
+  uint16_t raw_idle_time = idle_time.read();
+
+  return raw_idle_time * 0.1;
 }
 /**************************************************************************/
 /*!
@@ -106,14 +109,16 @@ uint8_t Adafruit_PCT2075::getIdleTime(void){
             The new idle time in seconds. Must be >= 0.1, <= 3.2 and a multiple
             of 0.1 (100 ms)
 */
-void Adafruit_PCT2075::setIdleTime(uint8_t new_idle_time){
+void Adafruit_PCT2075::setIdleTime(float new_idle_time){
   Adafruit_BusIO_Register idle_time_reg =
     Adafruit_BusIO_Register(i2c_dev, PCT2075_REGISTER_TIDLE, 1, MSBFIRST);
   
     Adafruit_BusIO_RegisterBits idle_time =
     Adafruit_BusIO_RegisterBits(&idle_time_reg, 5, 0);
 
-    idle_time.write(new_idle_time);
+    uint8_t raw_idle_time = (uint8_t) (new_idle_time / 0.1);
+    Serial.print("raw idle time to set: "); Serial.println(raw_idle_time);
+    idle_time.write(raw_idle_time);
 }
 /**************************************************************************/
 /*!

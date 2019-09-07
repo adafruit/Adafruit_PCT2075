@@ -11,13 +11,13 @@ void setup() {
   while (!Serial) { delay(1); }
   Serial.println("Adafruit PCT2075 Test");
 
-  if (!pct.begin(0x48)) {
+  if (!pct.begin()) {
     Serial.println("Couldn't find PCT2075 chip");
     while (1);
   }
   
   Serial.println("Found PCT2075 chip");
-  pct.setIdleTime(10); // 20 *100ms = 1 second
+  pct.setIdleTime(1.0);
   pct.setActiveHigh(true); 
   
   pct.setHighTemperatureThreshold(32.5);
@@ -47,5 +47,5 @@ void setup() {
 void loop() {
   // checking every
   Serial.print("Temperature: "); Serial.print(pct.getTemperature());Serial.println(" C");
-  delay(1000); // wait two seconds to match the idle time
+  delay(1000); // wait one second to match the idle time
 }

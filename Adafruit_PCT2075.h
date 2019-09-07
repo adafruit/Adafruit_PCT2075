@@ -67,8 +67,10 @@ public:
   boolean begin(uint8_t i2c_addr=PCT2075_I2CADDR_DEFAULT, TwoWire *wire = &Wire);  
 
   float getTemperature(void);
-  uint8_t getIdleTime(void);
-  void setIdleTime(uint8_t new_idle_time);
+
+  float getIdleTime(void);
+  void setIdleTime(float new_idle_time);
+
   void setActiveHigh(bool active_high);
 
   float getHighTemperatureThreshold(void);
