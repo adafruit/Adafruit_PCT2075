@@ -119,8 +119,8 @@ void Adafruit_PCT2075::setIdleTime(uint8_t new_idle_time){
 /*!
     @brief Sets the polarity of the INT pin
     @param  active_high
-            The polarity of the INT pin. If true the INT pin is Hi-Z on alert.
-            If false, the INT pin is connected to ground on alert.
+            The polarity of the INT pin. If false the INT pin is Hi-Z on alert.
+            If true, the INT pin is connected to ground on alert.
 */
 void Adafruit_PCT2075::setActiveHigh(bool active_high) {
     Adafruit_BusIO_RegisterBits active_high_bit =
@@ -196,4 +196,27 @@ void Adafruit_PCT2075::setMode(pct2075_mode_t mode){
     Adafruit_BusIO_RegisterBits mode_bit =
       Adafruit_BusIO_RegisterBits(CONFIG, 1, 1);
     mode_bit.write(mode);
+}
+
+/**************************************************************************/
+/*!
+    @brief Gets the fault count
+    @return The `pct2075_fault_count_t` signifying the number of faults
+            needed to raise an alert.
+*/
+pct2075_fault_count_t Adafruit_PCT2075::getFaultCount(void){
+    Adafruit_BusIO_RegisterBits fault_count_bits =
+      Adafruit_BusIO_RegisterBits(CONFIG, 2, 3);
+    return (pct2075_fault_count_t)fault_count_bits.read();
+}
+/*************************************************************************/
+/*!
+    @brief  Sets the fault count
+    @param  fault_count
+            The number of faults needed to raise an alert.
+*/
+void Adafruit_PCT2075::setFaultCount(pct2075_fault_count_t fault_count){
+    Adafruit_BusIO_RegisterBits fault_count_bits =
+      Adafruit_BusIO_RegisterBits(CONFIG, 2, 3);
+    fault_count_bits.write(fault_count);
 }

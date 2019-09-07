@@ -38,7 +38,7 @@
 
 typedef enum {
   PCT2075_MODE_COMPARITOR,  ///< In comparitor mode, the sensor acts like a thermostat and
-                            ///< will activate the INT pin. when an alert is triggered. The
+                            ///< will activate the INT pin when an alert is triggered. The
                             ///< INT pin will be deactiveated when the temperature falls below
                             ///< `temperature_hysteresis`.
   PCT2075_MODE_INTERRUPT    ///<  In interrupt mode the INT pin is activated once when a temperature
@@ -79,6 +79,9 @@ public:
 
   pct2075_mode_t getMode(void);
   void setMode(pct2075_mode_t mode);
+
+  pct2075_fault_count_t getFaultCount(void);
+  void setFaultCount(pct2075_fault_count_t);
 
   Adafruit_BusIO_Register *CONFIG;  ///< BusIO Register for CONFIG
 
