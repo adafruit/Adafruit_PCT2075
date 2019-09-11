@@ -1,12 +1,12 @@
 Adafruit_PCT2075 [![Build Status](https://travis-ci.com/adafruit/Adafruit_PCT2075.svg?branch=master)](https://travis-ci.com/adafruit/Adafruit_PCT2075)
 ================
 
-<a href="https://www.adafruit.com/products/4169"><img src="assets/board.jpg?raw=true" width="500px"></a>
+<a href="https://www.adafruit.com/products/4369"><img src="assets/board.jpg?raw=true" width="500px"></a>
 
 This is the Adafruit PCT2075 temperature sensor library
 
 Tested and works great with the Adafruit PCT2075 Breakout Board
-* https://www.adafruit.com/product/4169
+* https://www.adafruit.com/product/4369
 
 This chip uses I2C to communicate, 2 pins are required to interface
 

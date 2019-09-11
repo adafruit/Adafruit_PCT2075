@@ -24,7 +24,7 @@ void setup() {
   Serial.print("High temperature threshold: ");Serial.print(pct.getHighTemperatureThreshold()); Serial.println("");
   
   pct.setTemperatureHysteresis(30.5);
-  Serial.print("temperature hysteresis: ");Serial.print(pct.getTemperatureHysteresis()); Serial.println("");
+  Serial.print("Temperature hysteresis: ");Serial.print(pct.getTemperatureHysteresis()); Serial.println("");
   
   pct.setMode(PCT2075_MODE_COMPARITOR);
   Serial.print("Alert mode set to: ");
