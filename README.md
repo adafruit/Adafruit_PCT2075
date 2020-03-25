@@ -1,5 +1,4 @@
-Adafruit_PCT2075 [![Build Status](https://travis-ci.com/adafruit/Adafruit_PCT2075.svg?branch=master)](https://travis-ci.com/adafruit/Adafruit_PCT2075)
-================
+# Adafruit PCT2075 Library[![Build Status](https://github.com/adafruit/Adafruit_PCT2075/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/adafruit/Adafruit_PCT2075/actions)
 
 <a href="https://www.adafruit.com/products/4369"><img src="assets/board.jpg?raw=true" width="500px"></a>
 
