@@ -1,4 +1,4 @@
-# Adafruit PCT2075 Library[![Build Status](https://github.com/adafruit/Adafruit_PCT2075/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/adafruit/Adafruit_PCT2075/actions)
+# Adafruit PCT2075 Library[![Build Status](https://github.com/adafruit/Adafruit_PCT2075/workflows/Arduino%20Library%20CI/badge.svg)](https://github.com/adafruit/Adafruit_PCT2075/actions)[![Documentation](https://github.com/adafruit/ci-arduino/blob/master/assets/doxygen_badge.svg)](http://adafruit.github.io/Adafruit_PCT2075/html/index.html)
 
 <a href="https://www.adafruit.com/products/4369"><img src="assets/board.jpg?raw=true" width="500px"></a>
 
