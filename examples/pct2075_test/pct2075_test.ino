@@ -1,4 +1,4 @@
-ine// SPDX-FileCopyrightText: 2019 Bryan Siepert for Adafruit Industries
+// SPDX-FileCopyrightText: 2019 Bryan Siepert for Adafruit Industries
 //
 // SPDX-License-Identifier: BSD
 
