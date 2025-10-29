@@ -1,7 +1,12 @@
+// SPDX-FileCopyrightText: 2019 Bryan Siepert for Adafruit Industries
+//
+// SPDX-License-Identifier: BSD
+
 #include <Adafruit_PCT2075.h>
 
-
 Adafruit_PCT2075 PCT2075;
+
+i2c = 0x37  // default address (see guide for others)
 
 void setup() {
   PCT2075 = Adafruit_PCT2075();
@@ -11,7 +16,7 @@ void setup() {
   while (!Serial) { delay(1); }
   Serial.println("Adafruit PCT2075 Test");
 
-  if (!PCT2075.begin()) {
+  if (!PCT2075.begin(i2c)) {
     Serial.println("Couldn't find PCT2075 chip");
     while (1);
   }
