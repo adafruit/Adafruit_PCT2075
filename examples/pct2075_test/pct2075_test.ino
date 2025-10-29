@@ -6,7 +6,7 @@
 
 Adafruit_PCT2075 PCT2075;
 
-uint8_t i2c_addr = PCT2075_ADDR_DEFAULT  // default address (see guide for others)
+uint8_t i2c_addr = PCT2075_I2CADDR_DEFAULT  // default address (see guide for others)
 
 void setup() {
   PCT2075 = Adafruit_PCT2075();
