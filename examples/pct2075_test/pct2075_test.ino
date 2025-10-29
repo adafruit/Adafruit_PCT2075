@@ -9,7 +9,6 @@ Adafruit_PCT2075 PCT2075;
 uint8_t i2c_addr = PCT2075_I2CADDR_DEFAULT;  // default address (see guide for others)
 
 void setup() {
-  PCT2075 = Adafruit_PCT2075();
 
   Serial.begin(115200);
   // Wait until serial port is opened
@@ -20,7 +19,6 @@ void setup() {
     Serial.println("Couldn't find PCT2075 chip");
     while (1);
   }
-  
   Serial.println("Found PCT2075 chip");
 
 }
