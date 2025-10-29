@@ -21,8 +21,6 @@
 #include <Adafruit_I2CDevice.h>
 #include <Wire.h>
 
-//#define PCT2075_I2CADDR_DEFAULT 0x37  ///<  Address is configured with pins
-// A0-A2
 #define PCT2075_I2CADDR_DEFAULT 0x37 ///<  Address is configured with pins A0-A2
 #define PCT2075_REGISTER_TEMP 0x00   ///<  Temperature register (read-only)
 #define PCT2075_REGISTER_CONFIG 0x01 ///<  Configuration register
